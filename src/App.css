@@ -1,0 +1,54 @@
+@import-normalize;
+
+
+body,*{
+  margin:0;
+  padding:0
+}
+#root {
+  
+background-color: black;
+min-height: 100vh;
+
+}
+
+/* mui elements */
+
+.MuiFormControl-root > .MuiTypography-root{
+  color:#4d4d4d
+}
+/* input, textarea */
+ .MuiTextField-root {
+  background-color: #e0e0e0;
+  
+} 
+/* specialized class*/
+.white_badge{
+  display:inline-block;
+  padding:0 2px;
+  background:white;
+  color:black;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
