@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useRef,useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
   setopen,
@@ -17,7 +17,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 
 
-const Form = ({MainHead,MainElem}) => {
+const Form = ({MainHead,MainElem,setformWidth}) => {
 
 
   const dispatch = useDispatch();
@@ -28,10 +28,12 @@ const Form = ({MainHead,MainElem}) => {
     dispatch(setopen(false));
   };
 
+   
+  const cardRef = useRef(null);
 
-
-
-
+  useLayoutEffect(()=>{
+   setformWidth(cardRef.current.offsetHeight);
+  },[MainHead,MainElem])
 
 
 
@@ -39,11 +41,13 @@ const Form = ({MainHead,MainElem}) => {
     <>
       
         <Card
+        ref={cardRef}
         sx={{
-          width: 400,
+          width: {md:400,xs:"100%"},
           position: "absolute",
-          bottom: "107px",
-          right: "46px",
+          bottom: {md:"107px",xs:0},
+          right: {md:"46px",xs:0},
+          borderRadius:{md:"initial",xs:"26px 26px 0 0"}
         }}
       >
         <CardContent>

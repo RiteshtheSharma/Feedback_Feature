@@ -2,11 +2,9 @@ import ThumbsUpDownIcon from "@mui/icons-material/ThumbsUpDown";
 import FlagIcon from "@mui/icons-material/Flag";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import EditNoteIcon from "@mui/icons-material/EditNote";
-import { Typography } from "@mui/material";
 
 import "./App.css";
-import SpeedDialComp from "./components/SpeedDialComp";
-import Form from "./components/Form";
+import FABAndFormComp from "./components/FABAndFormComp";
 import NavBar from "./components/NavBar";
 
 
@@ -18,11 +16,8 @@ import FormHead from "./components/FormHead";
 
 import { top100Films } from "./MovieList";
 
-import { useSelector } from "react-redux";
 function App() {
-  const speedDialSelectedItem = useSelector(
-    (state) => state.speedDial.selectedItemName
-  );
+
   const actions = [
     {
       icon: <EditNoteIcon />,
@@ -131,18 +126,7 @@ function App() {
         }
       />
 
-      {speedDialSelectedItem !== undefined && (
-        <Form
-          MainHead={
-            actions.find((obj) => obj.name === speedDialSelectedItem).formHead
-          }
-          MainElem={
-            actions.find((obj) => obj.name === speedDialSelectedItem).formElem
-          }
-        />
-      )}
-
-      <SpeedDialComp actions={actions} />
+     <FABAndFormComp actions={actions}/>
     </>
   );
 }

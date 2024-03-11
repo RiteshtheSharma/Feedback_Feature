@@ -108,7 +108,7 @@ const NavBar = ({ heading }) => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: "block" }}
+            sx={{ display: "block" , fontSize:{md:"initial",xs:"12px"}}}
           >
             {heading}
           </Typography>

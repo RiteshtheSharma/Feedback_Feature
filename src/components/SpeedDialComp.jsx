@@ -25,7 +25,7 @@ import { safeTheme } from "./MuiCustomizedUiParts/Themes";
 import { useTheme, ThemeProvider } from "@emotion/react";
 
 import FabWithToolTip from "./FabWithToolTip";
-export default function SpeedDialComp({actions}) {
+export default function SpeedDialComp({actions,liftOnMobileDisplay}) {
 
   
   const dispatch = useDispatch();
@@ -62,7 +62,7 @@ export default function SpeedDialComp({actions}) {
   useEffect(() => { let timeOutId
 if(SpeedDialToolTipMsg && direction==="up")
    timeOutId = setTimeout(()=>{setSpeedDialToolTipMsg(undefined);unselectItemName()},2000)
-  
+      console.log(liftOnMobileDisplay," form width");
     return () => {
       clearTimeout(timeOutId)
     }
@@ -79,7 +79,7 @@ if(SpeedDialToolTipMsg && direction==="up")
           transform: "translateZ(0px)",
           flexGrow: 0.5,
           position: "absolute",
-          bottom: { md: "32px", xs: "24px" },
+          bottom: { md: "32px",  xs: ((selectedSpeedDialItemName)?`${liftOnMobileDisplay}px`:"24px") },
           right: { md: "32px", xs: "24px" },
           color: "#0F0F0F",
         }}
