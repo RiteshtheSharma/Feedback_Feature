@@ -26,7 +26,7 @@ function App() {
       formHead: (
         <FormHead
           startingText={"Share your"}
-          boldingText={"Suggestions"}
+          boldingText={" Suggestions "}
           midText={"width us"}
           endingText={"for a chance to earn rewards!"}
         />
@@ -52,7 +52,7 @@ function App() {
       formHead: (
         <FormHead
           startingText={"Let us know what"}
-          boldingText={"your queries"}
+          boldingText={" your queries "}
           endingText={"are!"}
         />
       ),
@@ -74,7 +74,7 @@ function App() {
       formHead: (
         <FormHead
           startingText={"Let us know your"}
-          boldingText={"Feedback"}
+          boldingText={" Feedback "}
           endingText={"about us!"}
         />
       ),
@@ -96,7 +96,7 @@ function App() {
       formHead: (
         <FormHead
           startingText={" Let us know about the"}
-          boldingText={"Issue"}
+          boldingText={" Issue "}
           endingText={"you are facing right now!"}
         />
       ),
