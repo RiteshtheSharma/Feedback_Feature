@@ -15,14 +15,18 @@ import {Tooltip} from '@mui/material';
     color: theme.palette.text.primary,
   }));
 
-  const LightTooltip = styled(({ className, ...props }) => (
+  const LightTooltip = styled(({ className, color,...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
-  ))(({ theme }) => ({
+  ))(({ theme,color }) => ({
+    [`& .${tooltipClasses.tooltipArrow}`]: {
+      backgroundColor: color,
+      boxShadow: theme.shadows[1]
+    },
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: theme.palette.common.white,
       color: 'rgba(0, 0, 0, 0.87)',
       boxShadow: theme.shadows[1],
-      fontSize: 11,
+      fontSize: 23,
     },
   }));
   

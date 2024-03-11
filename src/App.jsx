@@ -2,11 +2,13 @@ import ThumbsUpDownIcon from "@mui/icons-material/ThumbsUpDown";
 import FlagIcon from "@mui/icons-material/Flag";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import { Typography } from "@mui/material";
 
 import "./App.css";
 import SpeedDialComp from "./components/SpeedDialComp";
 import Form from "./components/Form";
 import NavBar from "./components/NavBar";
+
 
 import SelectorElem from "./components/SelectorElem";
 import TextAreaElem from "./components/TextAreaElem";
@@ -128,6 +130,7 @@ function App() {
           </span>
         }
       />
+
       {speedDialSelectedItem !== undefined && (
         <Form
           MainHead={

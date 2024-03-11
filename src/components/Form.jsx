@@ -69,7 +69,8 @@ const Form = ({MainHead,MainElem}) => {
               padding: "2px 15px",
               backgroundColor: "black",
               textTransform: "capitalize",
-            }}
+            }} 
+            onClick={onButtonClick}
           >
             Submit
           </Button>

@@ -24,6 +24,7 @@ import { safeTheme } from "./MuiCustomizedUiParts/Themes";
 
 import { useTheme, ThemeProvider } from "@emotion/react";
 
+import FabWithToolTip from "./FabWithToolTip";
 export default function SpeedDialComp({actions}) {
 
   
@@ -49,14 +50,18 @@ export default function SpeedDialComp({actions}) {
     setSpeedDialOpen(!open);
     unselectItemName();
     setSpeedDialDirection("up");
+    if(SpeedDialToolTipMsg){
+      setSpeedDialToolTipMsg(undefined);
+    }
   };
+
   const onSpeedDialCompItemClick = () => {
     setSpeedDialDirection("left");
   };
 
   useEffect(() => { let timeOutId
 if(SpeedDialToolTipMsg && direction==="up")
-   timeOutId = setTimeout(()=>setSpeedDialToolTipMsg(undefined),500)
+   timeOutId = setTimeout(()=>{setSpeedDialToolTipMsg(undefined);unselectItemName()},2000)
   
     return () => {
       clearTimeout(timeOutId)
@@ -80,7 +85,11 @@ if(SpeedDialToolTipMsg && direction==="up")
         }}
       >
         <Box sx={{ position: "relative", mt: 3, color: "#0F0F0F" }}>
-          <StyledSpeedDial
+
+
+        {(SpeedDialToolTipMsg && !open ) ?(
+                <FabWithToolTip tooltipTitle={SpeedDialToolTipMsg} />
+              ):( <StyledSpeedDial
           mask
             ariaLabel="Floating Action Button"
             open={open }
@@ -147,7 +156,12 @@ if(SpeedDialToolTipMsg && direction==="up")
       />
     ))
     }
-          </StyledSpeedDial>
+          </StyledSpeedDial> )}
+         
+
+
+         
+
         </Box>
       </Box>
     </ThemeProvider>

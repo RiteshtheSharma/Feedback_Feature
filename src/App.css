@@ -22,6 +22,21 @@ min-height: 100vh;
   background-color: #e0e0e0;
   
 } 
+
+.fabPermanentToolTip{
+position: relative;
+
+}
+.fabPermanentToolTip::before{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  clip-path: polygon(100% 0, 1% 0, 54% 100%);
+  background: white;
+  bottom: 3px;
+  right: 11px;
+}
 /* specialized class*/
 .white_badge{
   display:inline-block;
