@@ -62,7 +62,7 @@ export default function SpeedDialComp({actions,liftOnMobileDisplay}) {
   useEffect(() => { let timeOutId
 if(SpeedDialToolTipMsg && direction==="up")
    timeOutId = setTimeout(()=>{setSpeedDialToolTipMsg(undefined);unselectItemName()},2000)
-      console.log(liftOnMobileDisplay," form width");
+    
     return () => {
       clearTimeout(timeOutId)
     }

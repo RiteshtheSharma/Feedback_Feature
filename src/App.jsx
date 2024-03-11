@@ -102,7 +102,7 @@ function App() {
       ),
       formElem: (
         <>
-          {" "}
+          
           <SelectorElem label={"Choose a section"} options={top100Films} />
           <TextAreaElem
             label={

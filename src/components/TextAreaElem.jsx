@@ -1,6 +1,7 @@
 import { FormControl,Typography,TextField } from "@mui/material"
 
 const TextAreaElem = ({label,placeholder, AttachmentComp}) => {
+
   return (
 <FormControl fullWidth sx={{marginTop:"20px"}}>
     <Typography sx={{ mb: 1.5 }} >
@@ -17,7 +18,7 @@ const TextAreaElem = ({label,placeholder, AttachmentComp}) => {
         AttachmentComp
         ),
       }}
-
+      
       fullWidth
      />
          </FormControl> 

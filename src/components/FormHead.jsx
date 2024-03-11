@@ -7,7 +7,7 @@ const FormHead = ({startingText,boldingText,midText,endingText}) => {
     <Box sx={{ margin: "15px auto" }}>
     <Typography
       variant="h6"
-      sx={{ color: Color, lineHeight: "10px", fontWeight: "800" }}
+      sx={{ color: Color,fontSize:{md:"initial",xs:"15px"}, lineHeight: "10px", fontWeight: "800" }}
       align="center"
     >
       {startingText}
@@ -15,7 +15,7 @@ const FormHead = ({startingText,boldingText,midText,endingText}) => {
       {midText}
     </Typography>
     <Typography
-      sx={{ color: Color, fontWeight: "800" }}
+      sx={{ color: Color, fontWeight: "800",fontSize:{md:"initial",xs:"15px"} }}
       variant="h6"
       align="center"
     >
