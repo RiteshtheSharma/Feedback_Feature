@@ -34,7 +34,7 @@ export default function SpeedDialComp({actions,liftOnMobileDisplay}) {
 
   const open = useSelector((state) => state.speedDial.open);
   const direction = useSelector((state) => state.speedDial.direction);
-  const selectedSpeedDialItemName = useSelector(
+  const SelectedItemName = useSelector(
     (state) => state.speedDial.selectedItemName
   );
 
@@ -79,7 +79,7 @@ if(SpeedDialToolTipMsg && direction==="up")
           transform: "translateZ(0px)",
           flexGrow: 0.5,
           position: "absolute",
-          bottom: { md: "32px",  xs: ((selectedSpeedDialItemName)?`${liftOnMobileDisplay}px`:"24px") },
+          bottom: { md: "32px",  xs: ((SelectedItemName)?`${liftOnMobileDisplay}px`:"24px") },
           right: { md: "32px", xs: "24px" },
           color: "#0F0F0F",
         }}
@@ -106,7 +106,7 @@ if(SpeedDialToolTipMsg && direction==="up")
             FabProps={{
               sx: {
                 bgcolor: "#F8F8F8",
-
+                
                 height: "40px",
                 width: "40px",
                 "&:hover": {
@@ -122,25 +122,21 @@ if(SpeedDialToolTipMsg && direction==="up")
       <SpeedDialAction
         sx={{
           color: "#0F0F0F",
-          "&:active":
-            direction === "left"
-              ? {
-                  outline: "4px solid #808080",
-                  border: "7px solid transparent",
-                }
-              : {},
+          outline:(SelectedItemName==action.name)? "2px solid #808080":"",
+          border: (SelectedItemName==action.name)?"3px solid black":"",
+          boxSizing:"content-box"
         }}
         key={action.name}
         icon={action.icon}
         tooltipOpen={
           direction === "up" &&
           open &&
-          selectedSpeedDialItemName === undefined
+          SelectedItemName === undefined
         }
         tooltipTitle={
           direction === "up" &&
           open &&
-          selectedSpeedDialItemName === undefined && (
+          SelectedItemName === undefined && (
             <SpeedDialActionToolTip theme={theme}>
               {action.name}
             </SpeedDialActionToolTip>

@@ -16,7 +16,13 @@ min-height: 100vh;
 
 .MuiFormControl-root > .MuiTypography-root{
   color:#4d4d4d
+} 
+
+/* SpeedDialAction elements 's immediate container */
+.MuiSpeedDial-actions.css-u1qjuz-MuiSpeedDial-actions,#FloatingActionButton-actions{
+  align-items:center;
 }
+
 /* input, textarea */
  .MuiTextField-root {
   background-color: #e0e0e0;
