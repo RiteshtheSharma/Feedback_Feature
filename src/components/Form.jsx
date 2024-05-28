@@ -45,9 +45,9 @@ const Form = ({MainHead,MainElem,setformWidth}) => {
         sx={{
           width: {md:400,xs:"100%"},
           position: "absolute",
-          bottom: {md:"107px",xs:0},
+          bottom: {md:"120px",xs:0},
           right: {md:"46px",xs:0},
-          borderRadius:{md:"initial",xs:"26px 26px 0 0"}
+          borderRadius:{md:"10px",xs:"26px 26px 0 0"}
         }}
       >
         <CardContent>
@@ -68,8 +68,10 @@ const Form = ({MainHead,MainElem,setformWidth}) => {
         >
           <Button
             size="small"
+           
             variant="contained"
             sx={{
+              fontWeight:"900",
               padding: "2px 15px",
               backgroundColor: "black",
               textTransform: "capitalize",

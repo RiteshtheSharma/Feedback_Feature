@@ -19,9 +19,32 @@ import { top100Films } from "./MovieList";
 function App() {
 
   const actions = [
+    
+    {
+      icon: <QuestionAnswerIcon />,
+      name: "Contact us",
+      endMsg: "We will get back to you as soon as possible!",
+      formHead: (
+        <FormHead
+          startingText={"Let us know what"}
+          boldingText={" your queries "}
+          endingText={"are!"}
+        />
+      ),
+      formElem: (
+        <>
+          {" "}
+          <SelectorElem label={"Your name"} options={top100Films} />
+          <TextAreaElem
+            label={<ImportantFormLabel Label={"What would you like to ask"} />}
+            placeholder="Write here..."
+          />
+        </>
+      ),
+    },
     {
       icon: <EditNoteIcon />,
-      name: "Suggestions",
+      name: "Give Suggestions",
       endMsg: "Thanks for your valuable suggestion!",
       formHead: (
         <FormHead
@@ -41,28 +64,6 @@ function App() {
             }
             placeholder="Write here..."
             AttachmentComp={<AttachmentElem />}
-          />
-        </>
-      ),
-    },
-    {
-      icon: <QuestionAnswerIcon />,
-      name: "Contact us",
-      endMsg: "We will get back to you as soon as possible!",
-      formHead: (
-        <FormHead
-          startingText={"Let us know what"}
-          boldingText={" your queries "}
-          endingText={"are!"}
-        />
-      ),
-      formElem: (
-        <>
-          {" "}
-          <SelectorElem label={"Your name"} options={top100Films} />
-          <TextAreaElem
-            label={<ImportantFormLabel Label={"What would you like to ask"} />}
-            placeholder="Write here..."
           />
         </>
       ),
