@@ -4,19 +4,19 @@ import SpeedDialComp from './SpeedDialComp';
 import {  useState } from "react";
 const FABAndFormComp = ({actions}) => {
     
-    const speedDialSelectedItem = useSelector(
+    const SelectedItemName = useSelector(
         (state) => state.speedDial.selectedItemName
       ); 
       const [formWidth, setformWidth] = useState(0)
   return (
-    <> {speedDialSelectedItem !== undefined && (
+    <> {SelectedItemName !== undefined && (
         <Form
         setformWidth={setformWidth}
           MainHead={
-            actions.find((obj) => obj.name === speedDialSelectedItem).formHead
+            actions.find((obj) => obj.name === SelectedItemName).formHead
           }
           MainElem={
-            actions.find((obj) => obj.name === speedDialSelectedItem).formElem
+            actions.find((obj) => obj.name === SelectedItemName).formElem
           }
         />
       )}
